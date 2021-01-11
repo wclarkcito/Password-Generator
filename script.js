@@ -3,20 +3,32 @@
 // Assignment Code
 var generateBtn = document.getElementById('generate');
 
-var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerChar = "abcdefghijklmnopqrstuvwxyz";
-var numbers = "0123456789"; 
-var specChar = "!@#$%^&*()<>_-=?";
+var upperChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var lowerChar = ["abcdefghijklmnopqrstuvwxyz"];
+var numbers = ["0123456789"]; 
+var specChar = ["!@#$%^&*()<>_-=?"];
+
+for(var i=0; i<upperChar.length; i++)//alert(upperChar);
+var upperChar =Math.floor(Math.random() * 26) + 1;
+
+for(var i=0; i<lowerChar.length; i++)//alert(lowerChar);
+var lowerChar =Math.floor(Math.random() * 26) + 1;
+
+for(var i=0; i<numbers.length; i++)//alert(numbers);
+var num =Math.floor(Math.random() * 10) + 1;
+
+for(var i=0; i<specChar.length; i++)//alert(specChar);
+var specChar =Math.floor(Math.random() * 16) + 1;
+
+
+
 
 var userSelection = [];
 var randomPassw = [];
 
 // Write password to the #password input
 function writePassword() {
-  //alert(upperChar);
-  //alert(lowerChar);
-  //alert(numbers);
-  //alert(specChar);
+
 
   var password = generatePassword();
   var passwordText = document.getElementById('#password');
