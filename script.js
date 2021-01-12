@@ -1,24 +1,26 @@
 
 
 // Assignment Code
-var generateBtn = document.getElementById('generate');
+var generateBtn = document.querySelector('#generate');
 
-var upperChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var lowerChar = ["abcdefghijklmnopqrstuvwxyz"];
-var numbers = ["0123456789"]; 
-var specChar = ["!@#$%^&*()<>_-=?"];
+//created variables for uppercase, lowercase, numbers and special characters//
+
+var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+var numbers = "0123456789"; 
+var specChar = "!@#$%^&*()<>_-=?";
 
 for(var i=0; i<upperChar.length; i++)//alert(upperChar);
-var upperChar =Math.floor(Math.random() * 26) + 1;
+var randomUpper =Math.floor(Math.random() * upperChar.length);
 
 for(var i=0; i<lowerChar.length; i++)//alert(lowerChar);
-var lowerChar =Math.floor(Math.random() * 26) + 1;
+var randomLower =Math.floor(Math.random() * lowerChar.length);
 
 for(var i=0; i<numbers.length; i++)//alert(numbers);
-var num =Math.floor(Math.random() * 10) + 1;
+var num =Math.floor(Math.random() * numbers.length);
 
 for(var i=0; i<specChar.length; i++)//alert(specChar);
-var specChar =Math.floor(Math.random() * 16) + 1;
+var randomSpec =Math.floor(Math.random() * specChar.length);
 
 
 
@@ -31,8 +33,8 @@ function writePassword() {
 
 
   var password = generatePassword();
-  var passwordText = document.getElementById('#password');
-
+  var passwordText = document.querySelector('#password');
+  
   passwordText.value = password;
 }
 
@@ -41,12 +43,38 @@ function generatePassword() {
   console.log(pwlength);
 
   var quesUpChar = confirm('Press ok if you would like upper case ;letters in your password');
-  if(quesUpChar) {
+  if(quesUpChar === true) {
+  
     userSelection.push(upperChar);
   }
-  console.log(userSelection);
+  
+  
+  var quesLowChar = confirm('press ok if you would like lower case letters in your password')
+  
+  if(quesLowChar === true) {
 
+    userSelection.push(lowerChar);
+  }
+  
+  var number = confirm('press ok if you would like a number in your password');
+  if(number === true) {
 
+    userSelection.push(numbers);
+  }
+  var special = confirm('press ok if you would like a special character in your password');
+  if(special === true) {
+
+    userSelection.push(specChar);
+  }
+console.log(userSelection);
+console.log(userSelection.join(""))
+
+for (var i = 0; i < pwlength; i++) {
+  var compList=userSelection.join("")
+  var randomNumber =Math.floor(Math.random() * compList.length);
+  console.log(randomNumber);
+}
+return pwlength
   
 }
 
