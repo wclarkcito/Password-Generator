@@ -68,8 +68,9 @@ for (var i = 0; i < pwlength; i++) {
   combChar.push(compList[randomNumber]);
   console.log(combChar);
 }
-//added variable combChar to return
-return combChar;
+//added variable combChar.join('') to return
+return combChar.join('');
+//console.log(combChar.toString());
   
 }
 

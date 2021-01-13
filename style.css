@@ -50,6 +50,12 @@ header {
   height: 2px;
 }
 
+/*centered and styled the h2 tag*/
+
+h2{
+  text-align: center;
+  color: blue;
+}
 .card-body {
   min-height: 100px;
 }
@@ -135,3 +141,5 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
+
