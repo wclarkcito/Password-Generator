@@ -31,8 +31,16 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var pwlength = prompt('Choose between 8 and 128 password charachters');
-  console.log(pwlength);
+  var pwlength = prompt('Choose between 8 and 128 password characters');
+    
+  //added conditionals for password length//
+  
+  if(pwlength < 8){
+      prompt("password must be greater than 8 characters");
+    }
+    else if(pwlength > 128){
+      prompt("password must not exceed 128 characters");
+    }
 //conditionals for upper case characters//
   var quesUpChar = confirm('Press ok if you would like upper case ;letters in your password');
   if(quesUpChar === true) {
