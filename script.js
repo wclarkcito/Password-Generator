@@ -10,17 +10,9 @@ var lowerChar = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789"; 
 var specChar = "!@#$%^&*()<>_-=?";
 
-for(var i=0; i<upperChar.length; i++)//alert(upperChar);
-var randomUpper =Math.floor(Math.random() * upperChar.length);
+//created variable to combine all characters
+var combChar=[];
 
-for(var i=0; i<lowerChar.length; i++)//alert(lowerChar);
-var randomLower =Math.floor(Math.random() * lowerChar.length);
-
-for(var i=0; i<numbers.length; i++)//alert(numbers);
-var num =Math.floor(Math.random() * numbers.length);
-
-for(var i=0; i<specChar.length; i++)//alert(specChar);
-var randomSpec =Math.floor(Math.random() * specChar.length);
 
 
 
@@ -41,26 +33,27 @@ function writePassword() {
 function generatePassword() {
   var pwlength = prompt('Choose between 8 and 128 password charachters');
   console.log(pwlength);
-
+//conditionals for upper case characters//
   var quesUpChar = confirm('Press ok if you would like upper case ;letters in your password');
   if(quesUpChar === true) {
   
     userSelection.push(upperChar);
   }
   
-  
+  //conditionals for lower case characters//
   var quesLowChar = confirm('press ok if you would like lower case letters in your password')
   
   if(quesLowChar === true) {
 
     userSelection.push(lowerChar);
   }
-  
+  //conditionals for numbers//
   var number = confirm('press ok if you would like a number in your password');
   if(number === true) {
 
     userSelection.push(numbers);
   }
+  //conditionals for special characters//
   var special = confirm('press ok if you would like a special character in your password');
   if(special === true) {
 
@@ -72,9 +65,11 @@ console.log(userSelection.join(""))
 for (var i = 0; i < pwlength; i++) {
   var compList=userSelection.join("")
   var randomNumber =Math.floor(Math.random() * compList.length);
-  console.log(randomNumber);
+  combChar.push(compList[randomNumber]);
+  console.log(combChar);
 }
-return pwlength
+//added variable combChar to return
+return combChar;
   
 }
 
